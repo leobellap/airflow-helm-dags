@@ -5,7 +5,7 @@ from airflow.providers.cncf.kubernetes.operators.pod import KubernetesPodOperato
 
 
 @dag(
-    start_date=datetime(2026, 9, 6, tzinfo=datetime.timezone.utc),
+    start_date=datetime(2026, 9, 6),
     schedule_interval=None,
     catchup=False,
     tags=["kubernetes"],
