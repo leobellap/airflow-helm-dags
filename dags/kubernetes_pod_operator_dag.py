@@ -1,9 +1,7 @@
 from datetime import datetime
 
 from airflow.decorators import dag, task
-from airflow.providers.cncf.kubernetes.operators.kubernetes_pod import (
-    KubernetesPodOperator,
-)
+from airflow.providers.cncf.kubernetes.operators.pod import KubernetesPodOperator
 
 
 @dag(
