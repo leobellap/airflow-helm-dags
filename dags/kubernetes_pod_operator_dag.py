@@ -21,13 +21,14 @@ def simple_kubernetes_pod_operator_demo():
     task_2_kubernetes_pod = KubernetesPodOperator(
         task_id="task_2_kubernetes_pod",
         namespace="airflow",
-        image="python:3.12",
+        image="python:3.12-slim",
         cmds=["python", "-c"],
         arguments=["print('Task 2: Running inside Kubernetes pod')"],
         name="airflow-k8s-pod-task-2",
         is_delete_operator_pod=True,
         in_cluster=True,
         get_logs=True,
+        startup_timeout_seconds=600,
         # kubernetes_conn_id='kubernetes_default',
     )
 
